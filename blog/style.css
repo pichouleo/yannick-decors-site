@@ -32,7 +32,7 @@ header .btn{order:2}
 .btn-line{border-color:#454952;color:var(--ink)}
 .btn-line:hover{border-color:var(--ink)}
 .eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
-main{padding:56px 0 80px}
+main.wrap{padding-top:56px;padding-bottom:80px}
 .breadcrumb{font-size:13px;color:var(--muted);margin-bottom:18px}
 .breadcrumb a{color:var(--slate);text-decoration:none}
 .breadcrumb a:hover{text-decoration:underline}
