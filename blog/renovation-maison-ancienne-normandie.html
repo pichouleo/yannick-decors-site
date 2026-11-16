@@ -26,10 +26,23 @@
 <header>
   <div class="wrap">
     <a class="logo-link" href="../index.html" aria-label="Retour en haut - Yannick Decors"><img class="logo-img" src="../img/navbar-logo.png" alt="Yannick Decors"></a>
-    <div class="hdr-links"><a href="../index.html" class="nav-link">Accueil</a><a href="../blog/index.html" class="nav-link">Blog</a><a href="tel:+33622740767" class="tel-link">06 22 74 07 67</a></div>
-    <a class="btn btn-bone" href="../index.html#devis">Demander mon devis</a>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="hdr-menu"><span></span><span></span><span></span></button>
+    <nav class="hdr-menu" id="hdr-menu" aria-label="Menu principal">
+      <div class="hdr-links"><a href="../index.html" class="nav-link">Accueil</a><a href="../blog/index.html" class="nav-link">Blog</a><a href="tel:+33622740767" class="tel-link">06 22 74 07 67</a></div>
+      <a class="btn btn-bone" href="../index.html#devis">Demander mon devis</a>
+    </nav>
   </div>
 </header>
+<script>
+(function(){var h=document.querySelector('header'),b=h&&h.querySelector('.burger');if(!b)return;
+function set(o){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');}
+b.addEventListener('click',function(){set(!h.classList.contains('open'));});
+h.querySelectorAll('.hdr-menu a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+document.addEventListener('click',function(e){if(!h.contains(e.target))set(false);});
+window.addEventListener('resize',function(){if(window.innerWidth>=760)set(false);});
+})();
+</script>
 
 <main class="wrap">
   <div class="breadcrumb"><a href="../index.html">Accueil</a> / <a href="index.html">Blog</a> / Maisons anciennes</div>
